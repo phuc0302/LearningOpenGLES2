@@ -24,13 +24,15 @@ public struct FwiTextureShader: FwiShader, FwiTexture {
     public var textureID: GLuint = 0
 
     // MARK: Class's constructors
-    public init(vertexShader: String, fragmentShader: String) {
-        self.compile(vertexShader: vertexShader, fragmentShader: fragmentShader)
+    public init() {
     }
-
-    //    deinit {
-    //        releaseShader()
-    //    }
+//    public init(vertexShader: String, fragmentShader: String) {
+//        self.compile(vertexShader: vertexShader, fragmentShader: fragmentShader)
+//    }
+//
+//    //    deinit {
+//    //        releaseShader()
+//    //    }
 
     // MARK: Class's public methods
     /// Instruct hardware which program to use before rendering the model.

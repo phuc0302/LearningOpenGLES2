@@ -46,7 +46,7 @@ open class FwiGLModel {
     fileprivate var vertexBuffer: GLuint = 0
 
     // MARK: Class's constructors
-    init(name n: String, vertices v: [FwiVertex], indices i: [GLubyte], shader s: FwiShader) {
+    public init(name n: String, vertices v: [FwiVertex], indices i: [GLubyte], shader s: FwiShader) {
         name = n
         shader = s
         indices = i

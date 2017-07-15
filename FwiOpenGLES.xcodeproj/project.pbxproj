@@ -14,6 +14,10 @@
 		BE7CA3641F19D41A008AC9C2 /* FwiTextureShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35D1F19D41A008AC9C2 /* FwiTextureShader.swift */; };
 		BE7CA3651F19D41A008AC9C2 /* FwiVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35E1F19D41A008AC9C2 /* FwiVertex.swift */; };
 		BE7CA3661F19D41A008AC9C2 /* FwiGLKMatrix+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35F1F19D41A008AC9C2 /* FwiGLKMatrix+Extension.swift */; };
+		BE7CA37C1F19FA2F008AC9C2 /* ColorFragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA3681F19D47F008AC9C2 /* ColorFragmentShader.glsl */; };
+		BE7CA37D1F19FA2F008AC9C2 /* ColorVertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.glsl */; };
+		BE7CA37E1F19FA2F008AC9C2 /* TextureFragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.glsl */; };
+		BE7CA37F1F19FA2F008AC9C2 /* TextureVertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.glsl */; };
 		OBJ_28 /* FwiOpenGLES2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* FwiOpenGLES2Tests.swift */; };
 		OBJ_30 /* FwiOpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* FwiOpenGLES.framework */; };
 /* End PBXBuildFile section */
@@ -187,6 +191,7 @@
 			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "FwiOpenGLES" */;
 			buildPhases = (
 				OBJ_20 /* Sources */,
+				BE7CA37B1F19FA0A008AC9C2 /* Resources */,
 				OBJ_22 /* Frameworks */,
 			);
 			buildRules = (
@@ -246,6 +251,20 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		BE7CA37B1F19FA0A008AC9C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE7CA37C1F19FA2F008AC9C2 /* ColorFragmentShader.glsl in Resources */,
+				BE7CA37D1F19FA2F008AC9C2 /* ColorVertexShader.glsl in Resources */,
+				BE7CA37E1F19FA2F008AC9C2 /* TextureFragmentShader.glsl in Resources */,
+				BE7CA37F1F19FA2F008AC9C2 /* TextureVertexShader.glsl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -284,14 +303,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE7CA3521F19D35A008AC9C2 /* lib-debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = FwiOpenGLES2;
-				PRODUCT_NAME = FwiOpenGLES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fiision.lib.FwiOpenGLES;
 			};
 			name = Debug;
 		};
@@ -299,13 +314,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE7CA3531F19D35A008AC9C2 /* lib-release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = FwiOpenGLES2;
-				PRODUCT_NAME = FwiOpenGLES;
-				SWIFT_VERSION = 3.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fiision.lib.FwiOpenGLES;
 			};
 			name = Release;
 		};
@@ -333,7 +345,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE7CA3541F19D35A008AC9C2 /* project-debug.xcconfig */;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
@@ -341,7 +352,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE7CA3551F19D35A008AC9C2 /* project-release.xcconfig */;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};

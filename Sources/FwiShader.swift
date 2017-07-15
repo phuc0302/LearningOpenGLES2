@@ -34,7 +34,7 @@ public protocol FwiShader {
     /// @param
     /// - vertexShader {String} (a vertex shader's name without glsl extension)
     /// - fragmentShader {String} (a fragment shader's name without glsl extension)
-    mutating func compile(vertexShader vertex: String, fragmentShader fragment: String)
+    mutating func compile(vertexShader vertex: String, fragmentShader fragment: String, fromBundle bundle: Bundle?)
 
     /// Instruct hardware which program to use before rendering the model.
     func prepareShader()
@@ -54,9 +54,9 @@ public extension FwiShader {
         return glGetUniformLocation(programID, "projectionMatrix")
     }
 
-    public mutating func compile(vertexShader vertex: String, fragmentShader fragment: String) {
-        fragmentShaderID = compile(shaderName: fragment, shaderType: GLenum(GL_FRAGMENT_SHADER))
-        vertexShaderID = compile(shaderName: vertex, shaderType: GLenum(GL_VERTEX_SHADER))
+    mutating func compile(vertexShader vertex: String, fragmentShader fragment: String, fromBundle bundle: Bundle? = nil) {
+        fragmentShaderID = compile(shaderName: fragment, shaderType: GLenum(GL_FRAGMENT_SHADER), fromBundle: bundle ?? Bundle.main)
+        vertexShaderID = compile(shaderName: vertex, shaderType: GLenum(GL_VERTEX_SHADER), fromBundle: bundle ?? Bundle.main)
         programID = glCreateProgram()
 
         glAttachShader(programID, fragmentShaderID)
@@ -101,9 +101,9 @@ public extension FwiShader {
     /// @param
     /// - shaderName {String} (a shader's name without glsl extension)
     /// - shaderType {GLenum} (a shader's type)
-    fileprivate func compile(shaderName name: String, shaderType type: GLenum) -> GLuint {
+    fileprivate func compile(shaderName name: String, shaderType type: GLenum, fromBundle bundle: Bundle) -> GLuint {
         /* Condition validation: validate shader's path */
-        guard let path = Bundle.main.path(forResource: name, ofType: "glsl") else {
+        guard let path = bundle.path(forResource: name, ofType: "glsl") else {
             #if DEBUG
                 fatalError("Could not find shader: \(name)!")
             #else

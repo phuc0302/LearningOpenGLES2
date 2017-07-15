@@ -22,9 +22,12 @@ public struct FwiColorShader: FwiShader {
     public var projectionMatrix = GLKMatrix4Identity
 
     // MARK: Class's constructors
-    public init(vertexShader: String, fragmentShader: String) {
-        compile(vertexShader: vertexShader, fragmentShader: fragmentShader)
+    public init() {
     }
+//    public init(vertexShader: String, fragmentShader: String) {
+////        compile()
+////        compile(vertexShader: vertexShader, fragmentShader: fragmentShader)
+//    }
 
     // MARK: Class's public methods
     /// Instruct hardware which program to use before rendering the model.

@@ -6,8 +6,9 @@
 //  Copyright © 2016년 BurtK. All rights reserved.
 //
 
-import UIKit
 import GLKit
+import FwiOpenGLES
+
 
 class GLKUpdater : NSObject, GLKViewControllerDelegate {
     
@@ -19,7 +20,7 @@ class GLKUpdater : NSObject, GLKViewControllerDelegate {
     
     
     func glkViewControllerUpdate(_ controller: GLKViewController) {
-        self.glkViewController.cube.updateWithDelta(self.glkViewController.timeSinceLastUpdate)
+        self.glkViewController.cube.update(withDelta: self.glkViewController.timeSinceLastUpdate)
     }
 }
 
@@ -28,8 +29,7 @@ class ViewController: GLKViewController {
     
     var glkView: GLKView!
     var glkUpdater: GLKUpdater!
-    var shader : BaseEffect!
-    var square : Square!
+    var shader : FwiTextureShader!
     var cube : Cube!
     
     override func viewDidLoad() {
@@ -49,7 +49,7 @@ class ViewController: GLKViewController {
         //Transfomr4: Viewport: Normalized -> Window
         //glViewport(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
         //이건 GLKit이 자동으로 해준다
-        glClearColor(1.0, 0.0, 0.0, 1.0);
+        glClearColor(0.0, 0.0, 0.0, 1.0);
         glClear(GLbitfield(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT))
         
         glEnable(GLenum(GL_DEPTH_TEST))
@@ -57,9 +57,9 @@ class ViewController: GLKViewController {
         glEnable(GLenum(GL_BLEND))
         glBlendFunc(GLenum(GL_SRC_ALPHA), GLenum(GL_ONE_MINUS_SRC_ALPHA))
         
-        let viewMatrix : GLKMatrix4 = GLKMatrix4MakeTranslation(0, 0, -5)
+        let viewMatrix : GLKMatrix4 = GLKMatrix4MakeTranslation(0, 0, -9)
         //self.square.renderWithParentMoelViewMatrix(viewMatrix)
-        self.cube.renderWithParentMoelViewMatrix(viewMatrix)
+        self.cube.renderModel(withParentMatrix: viewMatrix)
     }
     
     
@@ -80,17 +80,16 @@ extension ViewController {
     }
     
     func setupScene() {
-        self.shader = BaseEffect(vertexShader: "SimpleVertexShader.glsl", fragmentShader: "SimpleFragmentShader.glsl")
-        
+        self.shader = FwiTextureShader()
+        self.shader.compile(vertexShader: "TextureVertexShader", fragmentShader: "TextureFragmentShader", fromBundle: Bundle(identifier: "com.fiision.lib.FwiOpenGLES"))
+        self.shader.loadTexture(filename: "dice.png")
+
         self.shader.projectionMatrix = GLKMatrix4MakePerspective(
             GLKMathDegreesToRadians(85.0),
             GLfloat(self.view.bounds.size.width / self.view.bounds.size.height),
             1,
             150)
-        
+
         self.cube = Cube(shader: self.shader)
-        
     }
-    
-    
 }
