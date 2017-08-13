@@ -18,6 +18,22 @@
 		BE7CA37D1F19FA2F008AC9C2 /* ColorVertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.glsl */; };
 		BE7CA37E1F19FA2F008AC9C2 /* TextureFragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.glsl */; };
 		BE7CA37F1F19FA2F008AC9C2 /* TextureVertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.glsl */; };
+		BEA27D471F362A6D002FFE21 /* FwiOBJParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA27D461F362A6D002FFE21 /* FwiOBJParser.swift */; };
+		BEDEE7731F345C08003DA1EE /* Body_normal.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7501F3458B4003DA1EE /* Body_normal.tga */; };
+		BEDEE7741F345C08003DA1EE /* Body.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE74C1F3458B4003DA1EE /* Body.tga */; };
+		BEDEE7751F345C08003DA1EE /* BodyWet_normal.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7551F3458B4003DA1EE /* BodyWet_normal.tga */; };
+		BEDEE7761F345C08003DA1EE /* Boots_n.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE74E1F3458B4003DA1EE /* Boots_n.tga */; };
+		BEDEE7771F345C08003DA1EE /* Boots.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE74A1F3458B4003DA1EE /* Boots.tga */; };
+		BEDEE7781F345C08003DA1EE /* eyeball_l.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7541F3458B4003DA1EE /* eyeball_l.tga */; };
+		BEDEE7791F345C08003DA1EE /* eyeball_r.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE74B1F3458B4003DA1EE /* eyeball_r.tga */; };
+		BEDEE77A1F345C08003DA1EE /* eyes_normal.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7491F3458B4003DA1EE /* eyes_normal.tga */; };
+		BEDEE77B1F345C08003DA1EE /* eyes.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE74F1F3458B4003DA1EE /* eyes.tga */; };
+		BEDEE77C1F345C08003DA1EE /* Face_normal.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE74D1F3458B4003DA1EE /* Face_normal.tga */; };
+		BEDEE77D1F345C08003DA1EE /* Face.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7511F3458B4003DA1EE /* Face.tga */; };
+		BEDEE77E1F345C08003DA1EE /* Hair_normal.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7481F3458B4003DA1EE /* Hair_normal.tga */; };
+		BEDEE77F1F345C08003DA1EE /* Hair.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7521F3458B4003DA1EE /* Hair.tga */; };
+		BEDEE7801F345C08003DA1EE /* mouth.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7531F3458B4003DA1EE /* mouth.tga */; };
+		BEDEE7811F345C08003DA1EE /* BlondeElexis.obj in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7461F345884003DA1EE /* BlondeElexis.obj */; };
 		OBJ_28 /* FwiOpenGLES2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* FwiOpenGLES2Tests.swift */; };
 		OBJ_30 /* FwiOpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* FwiOpenGLES.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +66,22 @@
 		BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorVertexShader.glsl; sourceTree = "<group>"; };
 		BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureFragmentShader.glsl; sourceTree = "<group>"; };
 		BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureVertexShader.glsl; sourceTree = "<group>"; };
+		BEA27D461F362A6D002FFE21 /* FwiOBJParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiOBJParser.swift; sourceTree = "<group>"; };
+		BEDEE7461F345884003DA1EE /* BlondeElexis.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlondeElexis.obj; sourceTree = "<group>"; };
+		BEDEE7481F3458B4003DA1EE /* Hair_normal.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hair_normal.tga; sourceTree = "<group>"; };
+		BEDEE7491F3458B4003DA1EE /* eyes_normal.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = eyes_normal.tga; sourceTree = "<group>"; };
+		BEDEE74A1F3458B4003DA1EE /* Boots.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Boots.tga; sourceTree = "<group>"; };
+		BEDEE74B1F3458B4003DA1EE /* eyeball_r.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = eyeball_r.tga; sourceTree = "<group>"; };
+		BEDEE74C1F3458B4003DA1EE /* Body.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Body.tga; sourceTree = "<group>"; };
+		BEDEE74D1F3458B4003DA1EE /* Face_normal.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Face_normal.tga; sourceTree = "<group>"; };
+		BEDEE74E1F3458B4003DA1EE /* Boots_n.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Boots_n.tga; sourceTree = "<group>"; };
+		BEDEE74F1F3458B4003DA1EE /* eyes.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = eyes.tga; sourceTree = "<group>"; };
+		BEDEE7501F3458B4003DA1EE /* Body_normal.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Body_normal.tga; sourceTree = "<group>"; };
+		BEDEE7511F3458B4003DA1EE /* Face.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Face.tga; sourceTree = "<group>"; };
+		BEDEE7521F3458B4003DA1EE /* Hair.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hair.tga; sourceTree = "<group>"; };
+		BEDEE7531F3458B4003DA1EE /* mouth.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = mouth.tga; sourceTree = "<group>"; };
+		BEDEE7541F3458B4003DA1EE /* eyeball_l.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = eyeball_l.tga; sourceTree = "<group>"; };
+		BEDEE7551F3458B4003DA1EE /* BodyWet_normal.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = BodyWet_normal.tga; sourceTree = "<group>"; };
 		OBJ_11 /* FwiOpenGLES2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FwiOpenGLES2Tests.swift; sourceTree = "<group>"; };
 		OBJ_14 /* FwiOpenGLES.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FwiOpenGLES.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_15 /* FwiOpenGLESTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = FwiOpenGLESTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +153,7 @@
 			children = (
 				BE7CA34E1F19D0FC008AC9C2 /* extension */,
 				BE7CA34D1F19CFD0008AC9C2 /* model */,
+				BEA27D481F362A74002FFE21 /* parser */,
 				BE7CA34C1F19CFB5008AC9C2 /* shader */,
 			);
 			name = FwiOpenGLES;
@@ -137,9 +170,32 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BEA27D481F362A74002FFE21 /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				BEA27D461F362A6D002FFE21 /* FwiOBJParser.swift */,
+			);
+			name = parser;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* FwiOpenGLES2Tests */ = {
 			isa = PBXGroup;
 			children = (
+				BEDEE7501F3458B4003DA1EE /* Body_normal.tga */,
+				BEDEE74C1F3458B4003DA1EE /* Body.tga */,
+				BEDEE7551F3458B4003DA1EE /* BodyWet_normal.tga */,
+				BEDEE74E1F3458B4003DA1EE /* Boots_n.tga */,
+				BEDEE74A1F3458B4003DA1EE /* Boots.tga */,
+				BEDEE7541F3458B4003DA1EE /* eyeball_l.tga */,
+				BEDEE74B1F3458B4003DA1EE /* eyeball_r.tga */,
+				BEDEE7491F3458B4003DA1EE /* eyes_normal.tga */,
+				BEDEE74F1F3458B4003DA1EE /* eyes.tga */,
+				BEDEE74D1F3458B4003DA1EE /* Face_normal.tga */,
+				BEDEE7511F3458B4003DA1EE /* Face.tga */,
+				BEDEE7481F3458B4003DA1EE /* Hair_normal.tga */,
+				BEDEE7521F3458B4003DA1EE /* Hair.tga */,
+				BEDEE7531F3458B4003DA1EE /* mouth.tga */,
+				BEDEE7461F345884003DA1EE /* BlondeElexis.obj */,
 				OBJ_11 /* FwiOpenGLES2Tests.swift */,
 			);
 			name = FwiOpenGLES2Tests;
@@ -209,6 +265,7 @@
 			buildPhases = (
 				OBJ_27 /* Sources */,
 				OBJ_29 /* Frameworks */,
+				BEDEE7721F345BFA003DA1EE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +284,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				ORGANIZATIONNAME = "Fiision Studio";
 				TargetAttributes = {
 					OBJ_16 = {
 						LastSwiftMigration = 0830;
@@ -263,6 +321,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BEDEE7721F345BFA003DA1EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEDEE7731F345C08003DA1EE /* Body_normal.tga in Resources */,
+				BEDEE7741F345C08003DA1EE /* Body.tga in Resources */,
+				BEDEE7751F345C08003DA1EE /* BodyWet_normal.tga in Resources */,
+				BEDEE7761F345C08003DA1EE /* Boots_n.tga in Resources */,
+				BEDEE7771F345C08003DA1EE /* Boots.tga in Resources */,
+				BEDEE7781F345C08003DA1EE /* eyeball_l.tga in Resources */,
+				BEDEE7791F345C08003DA1EE /* eyeball_r.tga in Resources */,
+				BEDEE77A1F345C08003DA1EE /* eyes_normal.tga in Resources */,
+				BEDEE77B1F345C08003DA1EE /* eyes.tga in Resources */,
+				BEDEE77C1F345C08003DA1EE /* Face_normal.tga in Resources */,
+				BEDEE77D1F345C08003DA1EE /* Face.tga in Resources */,
+				BEDEE77E1F345C08003DA1EE /* Hair_normal.tga in Resources */,
+				BEDEE77F1F345C08003DA1EE /* Hair.tga in Resources */,
+				BEDEE7801F345C08003DA1EE /* mouth.tga in Resources */,
+				BEDEE7811F345C08003DA1EE /* BlondeElexis.obj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -273,6 +353,7 @@
 				BE7CA3601F19D41A008AC9C2 /* FwiColorShader.swift in Sources */,
 				BE7CA3661F19D41A008AC9C2 /* FwiGLKMatrix+Extension.swift in Sources */,
 				BE7CA3621F19D41A008AC9C2 /* FwiShader.swift in Sources */,
+				BEA27D471F362A6D002FFE21 /* FwiOBJParser.swift in Sources */,
 				BE7CA3651F19D41A008AC9C2 /* FwiVertex.swift in Sources */,
 				BE7CA3631F19D41A008AC9C2 /* FwiTexture.swift in Sources */,
 				BE7CA3611F19D41A008AC9C2 /* FwiGLModel.swift in Sources */,
