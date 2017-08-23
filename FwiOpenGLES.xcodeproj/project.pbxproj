@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE7CA3601F19D41A008AC9C2 /* FwiColorShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA3591F19D41A008AC9C2 /* FwiColorShader.swift */; };
+		BE488BFB1F460C6000F9C642 /* FwiCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE488BFA1F460C6000F9C642 /* FwiCapture.swift */; };
 		BE7CA3611F19D41A008AC9C2 /* FwiGLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35A1F19D41A008AC9C2 /* FwiGLModel.swift */; };
 		BE7CA3621F19D41A008AC9C2 /* FwiShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35B1F19D41A008AC9C2 /* FwiShader.swift */; };
-		BE7CA3631F19D41A008AC9C2 /* FwiTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35C1F19D41A008AC9C2 /* FwiTexture.swift */; };
+		BE7CA3631F19D41A008AC9C2 /* FwiTextureLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35C1F19D41A008AC9C2 /* FwiTextureLoader.swift */; };
 		BE7CA3641F19D41A008AC9C2 /* FwiTextureShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35D1F19D41A008AC9C2 /* FwiTextureShader.swift */; };
 		BE7CA3651F19D41A008AC9C2 /* FwiVertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35E1F19D41A008AC9C2 /* FwiVertex.swift */; };
 		BE7CA3661F19D41A008AC9C2 /* FwiGLKMatrix+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CA35F1F19D41A008AC9C2 /* FwiGLKMatrix+Extension.swift */; };
-		BE7CA37C1F19FA2F008AC9C2 /* ColorFragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA3681F19D47F008AC9C2 /* ColorFragmentShader.glsl */; };
-		BE7CA37D1F19FA2F008AC9C2 /* ColorVertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.glsl */; };
-		BE7CA37E1F19FA2F008AC9C2 /* TextureFragmentShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.glsl */; };
-		BE7CA37F1F19FA2F008AC9C2 /* TextureVertexShader.glsl in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.glsl */; };
+		BE7CA37C1F19FA2F008AC9C2 /* ColorFragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA3681F19D47F008AC9C2 /* ColorFragmentShader.fsh */; };
+		BE7CA37D1F19FA2F008AC9C2 /* ColorVertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.vsh */; };
+		BE7CA37E1F19FA2F008AC9C2 /* TextureFragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.fsh */; };
+		BE7CA37F1F19FA2F008AC9C2 /* TextureVertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.vsh */; };
+		BE8153801F41373F00620D90 /* FwiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE81537F1F41373F00620D90 /* FwiParser.swift */; };
+		BE93078B1F4B494F005CE3BF /* FwiShaderLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE93078A1F4B494F005CE3BF /* FwiShaderLoader.swift */; };
 		BEA27D471F362A6D002FFE21 /* FwiOBJParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA27D461F362A6D002FFE21 /* FwiOBJParser.swift */; };
+		BECCC3021F4C2B9300FB0E89 /* FwiPixelBufferShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCC3011F4C2B9300FB0E89 /* FwiPixelBufferShader.swift */; };
+		BED020A71F46964500EF2171 /* FwiBGRAFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED020A61F46964500EF2171 /* FwiBGRAFrame.swift */; };
+		BED714A91F4D28C100841E15 /* FwiEAGLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED714A81F4D28C100841E15 /* FwiEAGLView.swift */; };
+		BED714AB1F4D2D3300841E15 /* FwiPixelBufferLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED714AA1F4D2D3300841E15 /* FwiPixelBufferLoader.swift */; };
 		BEDEE7731F345C08003DA1EE /* Body_normal.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7501F3458B4003DA1EE /* Body_normal.tga */; };
 		BEDEE7741F345C08003DA1EE /* Body.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE74C1F3458B4003DA1EE /* Body.tga */; };
 		BEDEE7751F345C08003DA1EE /* BodyWet_normal.tga in Resources */ = {isa = PBXBuildFile; fileRef = BEDEE7551F3458B4003DA1EE /* BodyWet_normal.tga */; };
@@ -49,24 +55,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE488BFA1F460C6000F9C642 /* FwiCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiCapture.swift; sourceTree = "<group>"; };
 		BE7CA3521F19D35A008AC9C2 /* lib-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "lib-debug.xcconfig"; path = "FwiOpenGLES.xcodeproj/lib-debug.xcconfig"; sourceTree = "<group>"; };
 		BE7CA3531F19D35A008AC9C2 /* lib-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "lib-release.xcconfig"; path = "FwiOpenGLES.xcodeproj/lib-release.xcconfig"; sourceTree = "<group>"; };
 		BE7CA3541F19D35A008AC9C2 /* project-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "project-debug.xcconfig"; path = "FwiOpenGLES.xcodeproj/project-debug.xcconfig"; sourceTree = "<group>"; };
 		BE7CA3551F19D35A008AC9C2 /* project-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "project-release.xcconfig"; path = "FwiOpenGLES.xcodeproj/project-release.xcconfig"; sourceTree = "<group>"; };
 		BE7CA3561F19D35A008AC9C2 /* test-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "test-debug.xcconfig"; path = "FwiOpenGLES.xcodeproj/test-debug.xcconfig"; sourceTree = "<group>"; };
 		BE7CA3571F19D35A008AC9C2 /* test-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "test-release.xcconfig"; path = "FwiOpenGLES.xcodeproj/test-release.xcconfig"; sourceTree = "<group>"; };
-		BE7CA3591F19D41A008AC9C2 /* FwiColorShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiColorShader.swift; sourceTree = "<group>"; };
 		BE7CA35A1F19D41A008AC9C2 /* FwiGLModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiGLModel.swift; sourceTree = "<group>"; };
 		BE7CA35B1F19D41A008AC9C2 /* FwiShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiShader.swift; sourceTree = "<group>"; };
-		BE7CA35C1F19D41A008AC9C2 /* FwiTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiTexture.swift; sourceTree = "<group>"; };
+		BE7CA35C1F19D41A008AC9C2 /* FwiTextureLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiTextureLoader.swift; sourceTree = "<group>"; };
 		BE7CA35D1F19D41A008AC9C2 /* FwiTextureShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiTextureShader.swift; sourceTree = "<group>"; };
 		BE7CA35E1F19D41A008AC9C2 /* FwiVertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiVertex.swift; sourceTree = "<group>"; };
 		BE7CA35F1F19D41A008AC9C2 /* FwiGLKMatrix+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FwiGLKMatrix+Extension.swift"; sourceTree = "<group>"; };
-		BE7CA3681F19D47F008AC9C2 /* ColorFragmentShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorFragmentShader.glsl; sourceTree = "<group>"; };
-		BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorVertexShader.glsl; sourceTree = "<group>"; };
-		BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureFragmentShader.glsl; sourceTree = "<group>"; };
-		BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TextureVertexShader.glsl; sourceTree = "<group>"; };
+		BE7CA3681F19D47F008AC9C2 /* ColorFragmentShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColorFragmentShader.fsh; sourceTree = "<group>"; };
+		BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ColorVertexShader.vsh; sourceTree = "<group>"; };
+		BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = TextureFragmentShader.fsh; sourceTree = "<group>"; };
+		BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = TextureVertexShader.vsh; sourceTree = "<group>"; };
+		BE81537F1F41373F00620D90 /* FwiParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiParser.swift; sourceTree = "<group>"; };
+		BE93078A1F4B494F005CE3BF /* FwiShaderLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiShaderLoader.swift; sourceTree = "<group>"; };
 		BEA27D461F362A6D002FFE21 /* FwiOBJParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiOBJParser.swift; sourceTree = "<group>"; };
+		BECCC3011F4C2B9300FB0E89 /* FwiPixelBufferShader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiPixelBufferShader.swift; sourceTree = "<group>"; };
+		BED020A61F46964500EF2171 /* FwiBGRAFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiBGRAFrame.swift; sourceTree = "<group>"; };
+		BED714A81F4D28C100841E15 /* FwiEAGLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiEAGLView.swift; sourceTree = "<group>"; };
+		BED714AA1F4D2D3300841E15 /* FwiPixelBufferLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FwiPixelBufferLoader.swift; sourceTree = "<group>"; };
 		BEDEE7461F345884003DA1EE /* BlondeElexis.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BlondeElexis.obj; sourceTree = "<group>"; };
 		BEDEE7481F3458B4003DA1EE /* Hair_normal.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hair_normal.tga; sourceTree = "<group>"; };
 		BEDEE7491F3458B4003DA1EE /* eyes_normal.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = eyes_normal.tga; sourceTree = "<group>"; };
@@ -107,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE488BF71F45E32100F9C642 /* capture */ = {
+			isa = PBXGroup;
+			children = (
+				BE488BFA1F460C6000F9C642 /* FwiCapture.swift */,
+			);
+			name = capture;
+			sourceTree = "<group>";
+		};
 		BE7CA3391F19CDF1008AC9C2 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,10 +143,10 @@
 		BE7CA34C1F19CFB5008AC9C2 /* shader */ = {
 			isa = PBXGroup;
 			children = (
+				BE93078C1F4B4F42005CE3BF /* loader */,
 				BE7CA35B1F19D41A008AC9C2 /* FwiShader.swift */,
-				BE7CA35C1F19D41A008AC9C2 /* FwiTexture.swift */,
-				BE7CA3591F19D41A008AC9C2 /* FwiColorShader.swift */,
 				BE7CA35D1F19D41A008AC9C2 /* FwiTextureShader.swift */,
+				BECCC3011F4C2B9300FB0E89 /* FwiPixelBufferShader.swift */,
 			);
 			name = shader;
 			sourceTree = "<group>";
@@ -136,6 +156,7 @@
 			children = (
 				BE7CA35E1F19D41A008AC9C2 /* FwiVertex.swift */,
 				BE7CA35A1F19D41A008AC9C2 /* FwiGLModel.swift */,
+				BED020A61F46964500EF2171 /* FwiBGRAFrame.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -152,7 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				BE7CA34E1F19D0FC008AC9C2 /* extension */,
+				BE488BF71F45E32100F9C642 /* capture */,
 				BE7CA34D1F19CFD0008AC9C2 /* model */,
+				BED714A71F4D28AA00841E15 /* view */,
 				BEA27D481F362A74002FFE21 /* parser */,
 				BE7CA34C1F19CFB5008AC9C2 /* shader */,
 			);
@@ -162,20 +185,39 @@
 		BE7CA3671F19D444008AC9C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BE7CA3681F19D47F008AC9C2 /* ColorFragmentShader.glsl */,
-				BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.glsl */,
-				BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.glsl */,
-				BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.glsl */,
+				BE7CA3681F19D47F008AC9C2 /* ColorFragmentShader.fsh */,
+				BE7CA3691F19D47F008AC9C2 /* ColorVertexShader.vsh */,
+				BE7CA36A1F19D47F008AC9C2 /* TextureFragmentShader.fsh */,
+				BE7CA36B1F19D47F008AC9C2 /* TextureVertexShader.vsh */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE93078C1F4B4F42005CE3BF /* loader */ = {
+			isa = PBXGroup;
+			children = (
+				BE93078A1F4B494F005CE3BF /* FwiShaderLoader.swift */,
+				BE7CA35C1F19D41A008AC9C2 /* FwiTextureLoader.swift */,
+				BED714AA1F4D2D3300841E15 /* FwiPixelBufferLoader.swift */,
+			);
+			name = loader;
 			sourceTree = "<group>";
 		};
 		BEA27D481F362A74002FFE21 /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				BE81537F1F41373F00620D90 /* FwiParser.swift */,
 				BEA27D461F362A6D002FFE21 /* FwiOBJParser.swift */,
 			);
 			name = parser;
+			sourceTree = "<group>";
+		};
+		BED714A71F4D28AA00841E15 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BED714A81F4D28C100841E15 /* FwiEAGLView.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* FwiOpenGLES2Tests */ = {
@@ -314,10 +356,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE7CA37C1F19FA2F008AC9C2 /* ColorFragmentShader.glsl in Resources */,
-				BE7CA37D1F19FA2F008AC9C2 /* ColorVertexShader.glsl in Resources */,
-				BE7CA37E1F19FA2F008AC9C2 /* TextureFragmentShader.glsl in Resources */,
-				BE7CA37F1F19FA2F008AC9C2 /* TextureVertexShader.glsl in Resources */,
+				BE7CA37C1F19FA2F008AC9C2 /* ColorFragmentShader.fsh in Resources */,
+				BE7CA37D1F19FA2F008AC9C2 /* ColorVertexShader.vsh in Resources */,
+				BE7CA37E1F19FA2F008AC9C2 /* TextureFragmentShader.fsh in Resources */,
+				BE7CA37F1F19FA2F008AC9C2 /* TextureVertexShader.vsh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,14 +392,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				BE7CA3601F19D41A008AC9C2 /* FwiColorShader.swift in Sources */,
+				BE93078B1F4B494F005CE3BF /* FwiShaderLoader.swift in Sources */,
 				BE7CA3661F19D41A008AC9C2 /* FwiGLKMatrix+Extension.swift in Sources */,
+				BECCC3021F4C2B9300FB0E89 /* FwiPixelBufferShader.swift in Sources */,
 				BE7CA3621F19D41A008AC9C2 /* FwiShader.swift in Sources */,
+				BE488BFB1F460C6000F9C642 /* FwiCapture.swift in Sources */,
 				BEA27D471F362A6D002FFE21 /* FwiOBJParser.swift in Sources */,
 				BE7CA3651F19D41A008AC9C2 /* FwiVertex.swift in Sources */,
-				BE7CA3631F19D41A008AC9C2 /* FwiTexture.swift in Sources */,
+				BE7CA3631F19D41A008AC9C2 /* FwiTextureLoader.swift in Sources */,
 				BE7CA3611F19D41A008AC9C2 /* FwiGLModel.swift in Sources */,
 				BE7CA3641F19D41A008AC9C2 /* FwiTextureShader.swift in Sources */,
+				BE8153801F41373F00620D90 /* FwiParser.swift in Sources */,
+				BED714A91F4D28C100841E15 /* FwiEAGLView.swift in Sources */,
+				BED714AB1F4D2D3300841E15 /* FwiPixelBufferLoader.swift in Sources */,
+				BED020A71F46964500EF2171 /* FwiBGRAFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

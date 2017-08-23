@@ -12,14 +12,21 @@
 import GLKit
 
 
-open class FwiGLModel {
+open class FwiGLModel: FwiShader {
 
     // MARK: Class's properties
-    public var scale: Float = 1.0
-    public var position = GLKVector3(v: (0.0, 0.0, 0.0))
-    public var rotation = GLKVector3(v: (0.0, 0.0, 0.0))
+    /// Shader program.
+    public var program: GLuint = 0
+    public var vertexShader: GLuint = 0
+    public var fragmentShader: GLuint = 0
 
-    public var modelMatrix: GLKMatrix4 {
+    /// 3D mesh.
+    open var scale: Float = 1.0
+    open var position = GLKVector3(v: (0.0, 0.0, 0.0))
+    open var rotation = GLKVector3(v: (0.0, 0.0, 0.0))
+
+    /// Matrices
+    open var modelMatrix: GLKMatrix4 {
         var modelMatrix = GLKMatrix4Identity
 
         modelMatrix = GLKMatrix4Translate(modelMatrix, position.x, position.y, position.z)
@@ -28,13 +35,11 @@ open class FwiGLModel {
         modelMatrix = GLKMatrix4Rotate(modelMatrix, rotation.z, 0, 0, 1)
         modelMatrix = GLKMatrix4Scale(modelMatrix, scale, scale, scale)
 
-        return modelMatrix
+        return GLKMatrix4Multiply(parentMatrix, modelMatrix)
     }
+    open var parentMatrix = GLKMatrix4Identity
+    open var projectionMatrix = GLKMatrix4Identity
 
-    /// Model's name.
-    public fileprivate(set) var name: String
-    /// Model's shader.
-    public internal(set) var shader: FwiShader
     /// Model's vertices.
     public fileprivate(set) var vertices: [FwiVertex]
     /// Model's list of index of vertex within vertices.
@@ -46,12 +51,9 @@ open class FwiGLModel {
     fileprivate var vertexBuffer: GLuint = 0
 
     // MARK: Class's constructors
-    public init(name n: String, vertices v: [FwiVertex], indices i: [GLubyte], shader s: FwiShader) {
-        name = n
-        shader = s
+    public init(vertices v: [FwiVertex], indices i: [GLubyte]) {
         indices = i
         vertices = v
-
 
         // Generate 'vertices array object'
         glGenVertexArraysOES(1, &vao)
@@ -97,7 +99,7 @@ open class FwiGLModel {
             2,                                                                                      // texture(x, y)
             GLenum(GL_FLOAT),
             GLboolean(GL_FALSE),
-            GLsizei(MemoryLayout<FwiVertex>.size), bufferOffet((3 + 4) * MemoryLayout<Float>.size))    // axis(x, y, z) | color(r, g, b, a) | texture(x, y) :: offset is (3+4)*sizeof(Float)
+            GLsizei(MemoryLayout<FwiVertex>.size), bufferOffet((3 + 4) * MemoryLayout<Float>.size)) // axis(x, y, z) | color(r, g, b, a) | texture(x, y) :: offset is (3+4)*sizeof(Float)
 
         
         // Bind everything together
@@ -106,28 +108,18 @@ open class FwiGLModel {
         glBindBuffer(GLenum(GL_ELEMENT_ARRAY_BUFFER), 0)
     }
 
+    // MARK: Class's destructors
     deinit {
         release()
+        releaseShader()
     }
 
     // MARK: Class's public methods
-    /// Release all resources that is binding to this model's instance.
-    public func release() {
-        glDeleteBuffers(1, &vertexBuffer)
-        glDeleteBuffers(1, &indexBuffer)
-        glDeleteVertexArrays(1, &vao)
-        shader.releaseShader()
-    }
-
     /// Render the model with parent matrix.
     ///
     /// @param
     /// - parentMatrix {GLKMatrix4} (a parent's matrix)
-    public func renderModel(withParentMatrix m: GLKMatrix4 = GLKMatrix4MakeTranslation(0, 0, -5)) {
-        let matrix = GLKMatrix4Multiply(m, modelMatrix)
-        shader.modelMatrix = matrix
-        shader.prepareShader()
-        
+    open func renderModel(withParentMatrix m: GLKMatrix4 = GLKMatrix4Identity) {
         glBindVertexArrayOES(vao)
         if indices.count % 3 == 0 {
             glDrawElements(GLenum(GL_TRIANGLES), GLsizei(indices.count), GLenum(GL_UNSIGNED_BYTE), nil)
@@ -147,6 +139,13 @@ open class FwiGLModel {
 
 // MARK: Class's private methods
 fileprivate extension FwiGLModel {
+
+    /// Release all resources that is binding to this model's instance.
+    fileprivate func release() {
+        glDeleteBuffers(1, &vertexBuffer)
+        glDeleteBuffers(1, &indexBuffer)
+        glDeleteVertexArrays(1, &vao)
+    }
 
     /// Define buffer offset pointer.
     ///

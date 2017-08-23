@@ -76,7 +76,7 @@ fileprivate let incompleteBuffer = -1
 fileprivate let incompleteData = -2
 
 
-public struct FwiOBJParser {
+public struct FwiOBJParser: FwiParser {
 
     // MARK: Class's properties
     fileprivate let stream: InputStream
@@ -421,6 +421,7 @@ fileprivate extension FwiOBJParser {
         guard 0 < index && index < buffer.count else {
             return (incompleteData, 0)
         }
+//        let pointer: UnsafePointer<UInt8>? = nil
 
         /* Condition validation: terminate recursion */
         guard buffer[index] != cSpace && buffer[index] != cReturn else {

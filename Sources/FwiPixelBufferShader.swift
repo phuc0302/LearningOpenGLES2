@@ -1,31 +1,35 @@
-//  Project name: Texture
-//  File name   : FwiTextureShader.swift
+//  Project name: FwiOpenGLES
+//  File name   : FwiPixelBufferShader.swift
 //
 //  Author      : Phuc, Tran Huu
-//  Created date: 7/14/17
+//  Created date: 8/22/17
 //  Version     : 1.00
 //  --------------------------------------------------------------
-//  Copyright © 2017 BurtK. All rights reserved.
+//  Copyright © 2017 Fiision Studio. All rights reserved.
 //  --------------------------------------------------------------
 
 import GLKit
 
 
-public protocol FwiTextureShader {
+public protocol FwiPixelBufferShader {
 
-    /// Texture's ID.
-    var texture: GLuint { get set }
+    /// Texture from pixel buffer.
+    var texture: CVOpenGLESTexture? { get set }
+
     var textureUniform: Int32 { get }
 }
 
 // MARK: FwiTextureShader's default implementation
-public extension FwiShader where Self: FwiTextureShader {
+public extension FwiPixelBufferShader where Self: FwiShader {
 
     public var textureUniform: Int32 {
         return glGetUniformLocation(program, "u_texture")
     }
 
     public func prepareShader() {
+        guard let t = texture else {
+            return
+        }
         glUseProgram(program)
 
         // Inject projection matrix uniform
@@ -35,7 +39,7 @@ public extension FwiShader where Self: FwiTextureShader {
 
         // Inject texture uniform
         glActiveTexture(GLenum(GL_TEXTURE0))
-        glBindTexture(GLenum(GL_TEXTURE_2D), texture)
+        glBindTexture(CVOpenGLESTextureGetTarget(t), CVOpenGLESTextureGetName(t))
         glUniform1i(textureUniform, 0)
 
         // In case if texture is non power of 2
