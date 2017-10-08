@@ -25,8 +25,8 @@ public final class CaptureManager: NSObject {
     public let session = AVCaptureSession()
     public var delegate: CaptureManagerDelegate?
 
-    fileprivate var captureInput: AVCaptureDeviceInput?
-    fileprivate var captureOutput: AVCaptureVideoDataOutput?
+    public fileprivate(set) var captureInput: AVCaptureDeviceInput?
+    public fileprivate(set) var captureOutput: AVCaptureVideoDataOutput?
 
     fileprivate let queue = DispatchQueue(label: "com.fiision.lib.FwiOpenGLES")
 
@@ -44,8 +44,8 @@ public final class CaptureManager: NSObject {
             captureInput = try AVCaptureDeviceInput(device: try captureBack())
 
             // Initialize capture session & preset medium quality for video
-            if session.canSetSessionPreset(AVCaptureSessionPresetLow) {
-                session.canSetSessionPreset(AVCaptureSessionPresetLow)
+            if session.canSetSessionPreset(AVCaptureSessionPresetHigh) {
+                session.canSetSessionPreset(AVCaptureSessionPresetHigh)
             }
 
             // Add video
@@ -292,7 +292,6 @@ extension CaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
-        debugPrint("new frame...")
 
         CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
         defer {

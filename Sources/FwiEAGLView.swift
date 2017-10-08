@@ -14,9 +14,6 @@ import GLKit
 public final class FwiEAGLView: GLKView {
 
     // MARK: Class's properties
-    public fileprivate(set) var width: GLsizei  = 0
-    public fileprivate(set) var height: GLsizei = 0
-
     fileprivate var currentContext: EAGLContext?
 
     // MARK: Class's constructors
@@ -32,6 +29,10 @@ public final class FwiEAGLView: GLKView {
     // MARK: Class's public methods
     /// Apply current context to global EAGLContext.
     public func applyContext() {
+        guard currentContext == nil else {
+            return
+        }
+
         currentContext = EAGLContext.current()
         if currentContext != context {
             EAGLContext.setCurrent(context)
@@ -44,13 +45,28 @@ public final class FwiEAGLView: GLKView {
             return
         }
         EAGLContext.setCurrent(c)
+        currentContext = nil
     }
 
     // MARK: Class's private methods
     fileprivate func initialize() {
+        // Initialize OpenGLES3
+        guard let c = EAGLContext(api: .openGLES3) else {
+            debugPrint("There was an error during initializing EAGLContext!")
+            return
+        }
+        context = c
+
+        // Set scale factor to native scale
         contentScaleFactor = UIScreen.main.nativeScale
 
-        // Initialize OpenGLES 3
+        // Define drawable
+        drawableColorFormat = GLKViewDrawableColorFormat.RGBA8888
+        drawableDepthFormat = GLKViewDrawableDepthFormat.format24
+        drawableStencilFormat = GLKViewDrawableStencilFormat.format8
+        drawableMultisample = GLKViewDrawableMultisample.multisample4X
+
+        // Define render buffer storage
         guard let eaglLayer = layer as? CAEAGLLayer else {
             debugPrint("There was an error during initializing CAEAGLLayer!")
             return
@@ -59,16 +75,6 @@ public final class FwiEAGLView: GLKView {
         eaglLayer.isOpaque = true
         eaglLayer.drawableProperties = [kEAGLDrawablePropertyColorFormat:kEAGLColorFormatRGBA8,
                                         kEAGLDrawablePropertyRetainedBacking:NSNumber(value: false)]
-
-        guard let c = EAGLContext(api: .openGLES3) else {
-            debugPrint("There was an error during initializing EAGLContext!")
-            return
-        }
-        context = c
-
-        // Keep width & height's info
-        glGetRenderbufferParameteriv(GLenum(GL_RENDERBUFFER), GLenum(GL_RENDERBUFFER_WIDTH), &width)
-        glGetRenderbufferParameteriv(GLenum(GL_RENDERBUFFER), GLenum(GL_RENDERBUFFER_HEIGHT), &height)
     }
 }
 

@@ -1,29 +1,46 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uMQ-GM-P5D">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zfl-jE-TtE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--GLKit View Controller-->
-        <scene sceneID="HWm-Aq-cA5">
+        <scene sceneID="jM0-kL-0th">
             <objects>
-                <glkViewController preferredFramesPerSecond="30" id="uMQ-GM-P5D" customClass="ViewController" customModule="Dice" customModuleProvider="target" sceneMemberID="viewController">
+                <glkViewController storyboardIdentifier="ThreeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" preferredFramesPerSecond="30" id="Zfl-jE-TtE" customClass="ThreeVC" customModule="Dice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IQe-MP-uQK"/>
-                        <viewControllerLayoutGuide type="bottom" id="fnG-AC-QAA"/>
+                        <viewControllerLayoutGuide type="top" id="s2l-pg-YYY"/>
+                        <viewControllerLayoutGuide type="bottom" id="5mp-Z1-Y36"/>
                     </layoutGuides>
-                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="cr7-Q4-7yf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="idk-JO-C7Y" customClass="FwiEAGLView" customModule="FwiOpenGLES">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <gestureRecognizers/>
                         <connections>
-                            <outlet property="delegate" destination="uMQ-GM-P5D" id="D08-uS-NAe"/>
+                            <outlet property="delegate" destination="Zfl-jE-TtE" id="KSI-wd-jxd"/>
+                            <outletCollection property="gestureRecognizers" destination="7wq-yy-GrS" appends="YES" id="9Ir-uD-o29"/>
                         </connections>
                     </glkView>
+                    <connections>
+                        <outlet property="glView" destination="idk-JO-C7Y" id="b2o-Yc-fqQ"/>
+                        <outlet property="viewModel" destination="kq3-og-C9M" id="a7W-ak-nu4"/>
+                    </connections>
                 </glkViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VWR-bd-Pzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3r7-Ru-roS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="kq3-og-C9M" customClass="ThreeVM"/>
+                <panGestureRecognizer delaysTouchesEnded="NO" minimumNumberOfTouches="1" id="7wq-yy-GrS">
+                    <connections>
+                        <action selector="handlePanGestureWithGesture:" destination="Zfl-jE-TtE" id="6hX-lm-4xV"/>
+                        <outlet property="delegate" destination="Zfl-jE-TtE" id="gKQ-pA-mDJ"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="609" y="501"/>
+            <point key="canvasLocation" x="609" y="1215"/>
         </scene>
     </scenes>
 </document>

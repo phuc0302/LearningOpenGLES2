@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		4E5D7C641C8489A8006246F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5D7C631C8489A8006246F7 /* AppDelegate.swift */; };
-		4E5D7C661C8489A8006246F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5D7C651C8489A8006246F7 /* ViewController.swift */; };
 		4E5D7C691C8489A8006246F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5D7C671C8489A8006246F7 /* Main.storyboard */; };
 		4E5D7C6B1C8489A8006246F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E5D7C6A1C8489A8006246F7 /* Assets.xcassets */; };
 		4E5D7C6E1C8489A8006246F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5D7C6C1C8489A8006246F7 /* LaunchScreen.storyboard */; };
-		4E5D7C861C8489EC006246F7 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5D7C801C8489EC006246F7 /* Cube.swift */; };
+		4E5D7C861C8489EC006246F7 /* CubeMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5D7C801C8489EC006246F7 /* CubeMesh.swift */; };
 		4E5D7C8D1C8494A2006246F7 /* dice.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E5D7C8C1C8494A2006246F7 /* dice.png */; };
-		BE7CA3761F19D6A8008AC9C2 /* FwiOpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7CA3731F19D604008AC9C2 /* FwiOpenGLES.framework */; };
-		BE7CA3771F19D6A8008AC9C2 /* FwiOpenGLES.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE7CA3731F19D604008AC9C2 /* FwiOpenGLES.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE534B341F4AB00E0034EA06 /* ThreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE534B331F4AB00E0034EA06 /* ThreeVC.swift */; };
+		BECCC2FA1F4BE11100FB0E89 /* BackgroundMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCC2F91F4BE11100FB0E89 /* BackgroundMesh.swift */; };
+		BED020AB1F46E9CE00EF2171 /* IMG_3072.png in Resources */ = {isa = PBXBuildFile; fileRef = BED020AA1F46E9CE00EF2171 /* IMG_3072.png */; };
+		BED714B01F4D5AAE00841E15 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED714AD1F4D59DB00841E15 /* opencv2.framework */; };
+		BED714B71F4D648B00841E15 /* FwiOpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE7CA3731F19D604008AC9C2 /* FwiOpenGLES.framework */; };
+		BED714B81F4D648B00841E15 /* FwiOpenGLES.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE7CA3731F19D604008AC9C2 /* FwiOpenGLES.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BED714BE1F4D653F00841E15 /* ThreeVM.mm in Sources */ = {isa = PBXBuildFile; fileRef = BED714BD1F4D653F00841E15 /* ThreeVM.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +37,7 @@
 			remoteGlobalIDString = OBJ_15;
 			remoteInfo = FwiOpenGLESTests;
 		};
-		BE7CA3781F19D6A8008AC9C2 /* PBXContainerItemProxy */ = {
+		BED714B91F4D648B00841E15 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE7CA36D1F19D604008AC9C2 /* FwiOpenGLES.xcodeproj */;
 			proxyType = 1;
@@ -43,13 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BE7CA37A1F19D6A8008AC9C2 /* Embed Frameworks */ = {
+		BED714BB1F4D648B00841E15 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE7CA3771F19D6A8008AC9C2 /* FwiOpenGLES.framework in Embed Frameworks */,
+				BED714B81F4D648B00841E15 /* FwiOpenGLES.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,14 +63,20 @@
 /* Begin PBXFileReference section */
 		4E5D7C601C8489A8006246F7 /* Dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5D7C631C8489A8006246F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4E5D7C651C8489A8006246F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4E5D7C681C8489A8006246F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E5D7C6A1C8489A8006246F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E5D7C6D1C8489A8006246F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E5D7C6F1C8489A8006246F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E5D7C801C8489EC006246F7 /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		4E5D7C801C8489EC006246F7 /* CubeMesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeMesh.swift; sourceTree = "<group>"; };
 		4E5D7C8C1C8494A2006246F7 /* dice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice.png; sourceTree = "<group>"; };
+		BE534B331F4AB00E0034EA06 /* ThreeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeVC.swift; sourceTree = "<group>"; };
 		BE7CA36D1F19D604008AC9C2 /* FwiOpenGLES.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FwiOpenGLES.xcodeproj; path = ../FwiOpenGLES.xcodeproj; sourceTree = "<group>"; };
+		BECCC2F91F4BE11100FB0E89 /* BackgroundMesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundMesh.swift; sourceTree = "<group>"; };
+		BED020AA1F46E9CE00EF2171 /* IMG_3072.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_3072.png; sourceTree = "<group>"; };
+		BED714AD1F4D59DB00841E15 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "../../../../../R&D/Frameworks/opencv2.framework"; sourceTree = "<group>"; };
+		BED714BC1F4D653F00841E15 /* ThreeVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeVM.h; sourceTree = "<group>"; };
+		BED714BD1F4D653F00841E15 /* ThreeVM.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ThreeVM.mm; sourceTree = "<group>"; };
+		BED714BF1F4D657400841E15 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE7CA3761F19D6A8008AC9C2 /* FwiOpenGLES.framework in Frameworks */,
+				BED714B71F4D648B00841E15 /* FwiOpenGLES.framework in Frameworks */,
+				BED714B01F4D5AAE00841E15 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,16 +112,30 @@
 		4E5D7C621C8489A8006246F7 /* Dice */ = {
 			isa = PBXGroup;
 			children = (
+				BED714BF1F4D657400841E15 /* Header.h */,
+				BED714BC1F4D653F00841E15 /* ThreeVM.h */,
+				BED714BD1F4D653F00841E15 /* ThreeVM.mm */,
+				BE534B351F4AB02C0034EA06 /* New */,
+				BED020AA1F46E9CE00EF2171 /* IMG_3072.png */,
 				4E5D7C8C1C8494A2006246F7 /* dice.png */,
 				4E5D7C631C8489A8006246F7 /* AppDelegate.swift */,
-				4E5D7C651C8489A8006246F7 /* ViewController.swift */,
-				4E5D7C801C8489EC006246F7 /* Cube.swift */,
 				4E5D7C671C8489A8006246F7 /* Main.storyboard */,
 				4E5D7C6A1C8489A8006246F7 /* Assets.xcassets */,
 				4E5D7C6C1C8489A8006246F7 /* LaunchScreen.storyboard */,
+				BED714AD1F4D59DB00841E15 /* opencv2.framework */,
 				4E5D7C6F1C8489A8006246F7 /* Info.plist */,
 			);
 			path = Dice;
+			sourceTree = "<group>";
+		};
+		BE534B351F4AB02C0034EA06 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				BE534B331F4AB00E0034EA06 /* ThreeVC.swift */,
+				4E5D7C801C8489EC006246F7 /* CubeMesh.swift */,
+				BECCC2F91F4BE11100FB0E89 /* BackgroundMesh.swift */,
+			);
+			name = New;
 			sourceTree = "<group>";
 		};
 		BE7CA36C1F19D5F6008AC9C2 /* Dependencies */ = {
@@ -140,12 +165,12 @@
 				4E5D7C5C1C8489A8006246F7 /* Sources */,
 				4E5D7C5D1C8489A8006246F7 /* Frameworks */,
 				4E5D7C5E1C8489A8006246F7 /* Resources */,
-				BE7CA37A1F19D6A8008AC9C2 /* Embed Frameworks */,
+				BED714BB1F4D648B00841E15 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BE7CA3791F19D6A8008AC9C2 /* PBXTargetDependency */,
+				BED714BA1F4D648B00841E15 /* PBXTargetDependency */,
 			);
 			name = Dice;
 			productName = Dice;
@@ -164,8 +189,9 @@
 				TargetAttributes = {
 					4E5D7C5F1C8489A8006246F7 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = QN8XC3LEX2;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -215,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED020AB1F46E9CE00EF2171 /* IMG_3072.png in Resources */,
 				4E5D7C6E1C8489A8006246F7 /* LaunchScreen.storyboard in Resources */,
 				4E5D7C6B1C8489A8006246F7 /* Assets.xcassets in Resources */,
 				4E5D7C8D1C8494A2006246F7 /* dice.png in Resources */,
@@ -229,19 +256,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E5D7C661C8489A8006246F7 /* ViewController.swift in Sources */,
+				BE534B341F4AB00E0034EA06 /* ThreeVC.swift in Sources */,
+				BECCC2FA1F4BE11100FB0E89 /* BackgroundMesh.swift in Sources */,
 				4E5D7C641C8489A8006246F7 /* AppDelegate.swift in Sources */,
-				4E5D7C861C8489EC006246F7 /* Cube.swift in Sources */,
+				BED714BE1F4D653F00841E15 /* ThreeVM.mm in Sources */,
+				4E5D7C861C8489EC006246F7 /* CubeMesh.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BE7CA3791F19D6A8008AC9C2 /* PBXTargetDependency */ = {
+		BED714BA1F4D648B00841E15 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FwiOpenGLES;
-			targetProxy = BE7CA3781F19D6A8008AC9C2 /* PBXContainerItemProxy */;
+			targetProxy = BED714B91F4D648B00841E15 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -369,12 +398,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QN8XC3LEX2;
+				FRAMEWORK_SEARCH_PATHS = "/Users/phuc/Workspaces/R&D/Frameworks";
 				INFOPLIST_FILE = Dice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.pe.burt.ios.Dice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Dice/Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -385,12 +416,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QN8XC3LEX2;
+				FRAMEWORK_SEARCH_PATHS = "/Users/phuc/Workspaces/R&D/Frameworks";
 				INFOPLIST_FILE = Dice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.pe.burt.ios.Dice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Dice/Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
